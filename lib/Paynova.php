@@ -77,24 +77,24 @@ require_once("Paynova/response/model/ProfileCardDetails.php");
 require_once("Paynova/response/model/ProfileCardDetailsCollection.php");
 require_once("Paynova/response/model/Status.php");
 
-
-/*
- * Atleast PHP version 5.3.0
- */
-if (version_compare(PHP_VERSION, '5.3.0', '<')) {
-	throw new PaynovaException('PHP version >= 5.3.0 required. System version = '.PHP_VERSION);
-}
-
-/*
- *	Dependencies
- */
-function requireDependencies() {
-	$requiredExtensions = array('curl');
-	foreach ($requiredExtensions AS $ext) {
-		if (!extension_loaded($ext)) {
-			throw new PaynovaException('The Paynova sdk library requires the ' . $ext . ' extension.');
+class Dependencies {
+	public static function phpVersion() {
+		/*
+		 * Atleast PHP version 5.3.0
+		*/
+		if (version_compare(PHP_VERSION, '5.3.0', '<')) {
+			throw new PaynovaException('PHP version >= 5.3.0 required. System version = '.PHP_VERSION);
+		}
+	}
+	
+	public static function requiredDependencies() {
+		$requiredExtensions = array('curl');
+		foreach ($requiredExtensions AS $ext) {
+			if (!extension_loaded($ext)) {
+				throw new PaynovaException('The Paynova sdk library requires the ' . $ext . ' extension.');
+			}
 		}
 	}
 }
-
-requireDependencies();
+Dependencies::phpVersion();
+Dependencies::requireDependencies();

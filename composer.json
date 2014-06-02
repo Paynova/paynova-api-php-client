@@ -20,8 +20,8 @@
 		"phpunit/dbunit" : "~1"
 	},
 	"autoload" : {
-		"psr-0" : {
-			"Paynova" : "lib"
-		}
+		"psr-0": {
+            "Paynova": "lib"
+        }
 	}
 }
