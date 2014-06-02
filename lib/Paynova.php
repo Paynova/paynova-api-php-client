@@ -97,4 +97,4 @@ class Dependencies {
 	}
 }
 Dependencies::phpVersion();
-Dependencies::requireDependencies();
+Dependencies::requiredDependencies();
