@@ -1,0 +1,27 @@
+{
+	"name" : "paynova/paynova_php",
+	"type" : "library",
+	"description" : "Paynova PHP Client Library",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Paynova",
+			"homepage" : "http://www.paynova.com"
+		}
+	],
+	"require" : {
+		"php" : ">=5.3",
+		"ext-curl" : "*"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "3.7.*",
+		"phpunit/php-invoker" : "~1",
+		"phpunit/phpunit-selenium" : "~1",
+		"phpunit/phpunit-story" : "~1",
+		"phpunit/dbunit" : "~1"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Paynova" : "lib/"
+		}
+	}
+}
