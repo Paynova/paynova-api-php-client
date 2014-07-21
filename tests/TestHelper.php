@@ -9,7 +9,7 @@ if(!function_exists("localConfig")) {
 	function localConfig($var) {
 		$arr = array(
 			"do-local-tests"=>true,//To tests locally or against below endpoint true/false
-			"endpoint"=>"set-endpoint-url-here",
+			"endpoint"=>"http://set-endpoint-url-here.com",
 			"username"=>"set-merchant-username-here",
 			"password"=>"set-merchant-password-here",
 			"secretkey"=>"set-merchant-secret-key-here",
