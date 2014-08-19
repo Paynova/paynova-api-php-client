@@ -19,7 +19,7 @@ OR
 ```
 {
   "require" : {
-    "paynova/paynova_php": "v1.0.0"
+    "paynova/paynova_php": "v2.0.0"
   }
 }
 ```
@@ -29,6 +29,9 @@ OR
 Below example creates an order at Paynova.
 ```
 include YOUR_PATH."/lib/Paynova.php";
+
+use Paynova\PaynovaConfig;
+use Paynova\request\RequestCreateOrder;
 
 /*
 *	Set credentials here
