@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\request\model\Ticket;
+use Paynova\request\model\Address;
+
 class TicketTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_propertiesAgainstSignature(){

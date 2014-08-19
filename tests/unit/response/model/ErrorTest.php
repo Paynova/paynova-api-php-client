@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\response\model\Error;
+
 class ErrorTest extends PHPUnit_Framework_TestCase {
 	
 	
@@ -11,7 +13,7 @@ class ErrorTest extends PHPUnit_Framework_TestCase {
             "message"=>"'Currency Code' must be 3 characters in length. You entered 4 characters."
 				
 		));
-		$this->assertInstanceOf("Error",$error);
+		$this->assertInstanceOf("Paynova\\response\\model\\Error",$error);
 		
 	}
 }

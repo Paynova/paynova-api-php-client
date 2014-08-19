@@ -1,4 +1,5 @@
 <?php
+namespace Paynova\response;
 /**
  *
  * service: GetCustomerProfile
@@ -18,7 +19,7 @@ class ResponseGetCustomerProfile extends Response {
 	public function __construct() {
 		parent::__construct(array(
 			"profileId",
-			"profileCards"=>"ProfileCardDetailsCollection"
+			"profileCards"=>"Paynova\\response\\model\\ProfileCardDetailsCollection"
 		));
 	}
 	

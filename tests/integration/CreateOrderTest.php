@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../TestHelper.php";
 
+use Paynova\request\RequestCreateOrder;
+
 class CreateOrderTest extends PHPUnit_Framework_TestCase {
 	
 	/**
@@ -16,9 +18,9 @@ class CreateOrderTest extends PHPUnit_Framework_TestCase {
 		
 		$response = $request->request();
 		
-		$this->assertInstanceOf("ResponseCreateOrder", $response);
+		$this->assertInstanceOf("Paynova\\response\\ResponseCreateOrder", $response);
 			
-		$this->assertInstanceOf("Status", $response->status());
+		$this->assertInstanceOf("Paynova\\response\\model\\Status", $response->status());
 		
 		$this->assertTrue($response->status()->isSuccess() == true);
 		

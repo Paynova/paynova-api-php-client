@@ -1,4 +1,5 @@
 <?php
+namespace Paynova\http;
 /**
  * interface Http
  *
@@ -8,13 +9,6 @@
  * @copyright Paynova 2014
  */
 interface Http {
-	
-	/**
-	 * PUT is not supported yet
-	 * @param string $restPath
-	 * @param array $params
-	 */
-	public function put($restPath, $params);
 	
 	/**
 	 * Do a REST DELETE request

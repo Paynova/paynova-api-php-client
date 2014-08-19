@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\response\ResponseAnnulAuthorization;
+
 class ResponseAnnulAuthorizationTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_factoryByHttpEvent() {

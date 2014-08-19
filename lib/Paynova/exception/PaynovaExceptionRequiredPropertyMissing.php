@@ -1,4 +1,5 @@
 <?php
+namespace Paynova\exception;
 /**
  * class PaynovaExceptionRequiredPropertyMissing
  * @package Paynova/exception

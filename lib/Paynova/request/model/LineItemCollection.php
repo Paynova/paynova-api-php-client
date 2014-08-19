@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\PropertyItemCollection;
+
 /**
  * class LineItemCollection can store a collection of LineItem objects
  * part of service: 	Create Order, Initialize Payment, Finalize Authorization, 
@@ -21,6 +25,6 @@ class LineItemCollection extends PropertyItemCollection{
 	 * @return string
 	 */
 	public static function getClassnameOfTypeToStore() {
-		return "LineItem";
+		return "Paynova\\request\\model\\LineItem";
 	}
 }

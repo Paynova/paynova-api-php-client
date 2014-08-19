@@ -1,4 +1,13 @@
 <?php
+namespace Paynova\http;
+
+use Paynova\util\Version;
+use Paynova\exception\PaynovaException;
+use Paynova\exception\PaynovaExceptionConfig;
+use Paynova\PaynovaConfig;
+
+use \InvalidArgumentException;
+
 /**
 * class HttpConfig is a wrapper for CURLOPTions. It stores CURLOPTIONions that will be used in the
 * curl connection to the API SERVER thru the Paynova class Http

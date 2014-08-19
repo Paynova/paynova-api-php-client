@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\PropertyItemCollection;
+
 /**
  * class CustomDataCollection can store a collection of CustomData objects
  * part of service: 	Annul Authorization, Initialize Payment
@@ -20,6 +24,6 @@ class CustomDataCollection extends PropertyItemCollection{
 	 * @return string
 	 */
 	public static function getClassnameOfTypeToStore() {
-		return "CustomData";
+		return "Paynova\\request\\model\\CustomData";
 	}
 }

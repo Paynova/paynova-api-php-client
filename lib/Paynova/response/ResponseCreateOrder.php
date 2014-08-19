@@ -1,4 +1,5 @@
 <?php
+namespace Paynova\response;
 /**
  *
  * service: 	CreateOrder

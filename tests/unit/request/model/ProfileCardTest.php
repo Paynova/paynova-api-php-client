@@ -1,5 +1,9 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
+
+use Paynova\request\model\ProfileCard;
+use Paynova\request\model\Address;
+
 class ProfileCardTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_propertiesAgainstSignature(){
@@ -27,7 +31,7 @@ class ProfileCardTest extends PHPUnit_Framework_TestCase {
 				"cvc"=>"123"
 		));
 		
-		$this->assertInstanceOf("ProfileCard",$obj);
+		$this->assertInstanceOf("Paynova\\request\\model\\ProfileCard",$obj);
 		$this->assertEquals($obj->cardId(),"1234567890");
 		$this->assertEquals($obj->cvc(),"123");
 	}

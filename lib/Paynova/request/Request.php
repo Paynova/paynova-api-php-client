@@ -1,4 +1,13 @@
 <?php
+namespace Paynova\request;
+
+use Paynova\model\Instance;
+use Paynova\exception\PaynovaException;
+use Paynova\http\Http;
+use Paynova\http\HttpImpl;
+use Paynova\http\HttpConfig;
+use Paynova\response\ResponseFactory;
+
 /**
  * class Request
  * This is the base class for all Requests
@@ -164,5 +173,5 @@ abstract class Request extends Instance {
 	 * Do request for a Request
 	 * @return Response subclass
 	 */
-	abstract public function request(HttpConfig $config);
+	abstract public function request(HttpConfig $config = null);
 }

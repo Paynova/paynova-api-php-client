@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\exception;
+
+use Paynova\http\HttpEvent;
+
 /**
  * class PaynovaExceptionHttp
  * @package Paynova/exception

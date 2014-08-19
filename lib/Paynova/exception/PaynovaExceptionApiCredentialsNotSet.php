@@ -1,4 +1,5 @@
 <?php
+namespace Paynova\exception;
 /**
  * class PaynovaExceptionApiCredentialsNotSet
  * @package Paynova/exception

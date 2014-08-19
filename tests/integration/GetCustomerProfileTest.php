@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__."/../TestHelper.php";
+
+use Paynova\request\RequestGetCustomerProfile;
+
 class GetCustomerProfileTest extends PHPUnit_Framework_TestCase {
 	
 	/**
@@ -21,8 +24,8 @@ class GetCustomerProfileTest extends PHPUnit_Framework_TestCase {
 		//$mockHttp = new HttpImpl();
 		$request->setHttp($mockHttp);
 		$response = $request->request();
-		$this->assertInstanceOf("Status",$response->status());
-		$this->assertInstanceOf("ProfileCardDetailsCollection",$response->profileCards());
+		$this->assertInstanceOf("Paynova\\response\\model\\Status",$response->status());
+		$this->assertInstanceOf("Paynova\\response\\model\\ProfileCardDetailsCollection",$response->profileCards());
 		
 	}
 }

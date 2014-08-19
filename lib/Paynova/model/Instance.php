@@ -1,4 +1,11 @@
 <?php
+namespace Paynova\model;
+
+use Paynova\exception\PaynovaException;
+use Paynova\exception\PaynovaExceptionRequiredPropertyMissing;
+use Paynova\util\Util;
+
+use \InvalidArgumentException;
 /**
  * class Intance acts as a baseclass for a majority of the model classes.
  * The subclasses will either be a part of the a request or response to the API SERVER
@@ -198,8 +205,8 @@ abstract class Instance implements PropertyInterface{
 				
 				if($o == null) {
 					throw new InvalidArgumentException(
-							"Trying to factory to ".implode(", ",$classes)." ".
-							"but not signature matched supplied initArray"
+							"Trying to factory ".implode(", ",$classes)." ".
+							"but signature did not match supplied array"
 							
 					);
 				}

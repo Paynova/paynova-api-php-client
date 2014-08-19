@@ -1,10 +1,17 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\request\RequestInitializePayment;
+use Paynova\request\model\PaymentMethodCollection;
+use Paynova\request\model\CustomDataCollection;
+use Paynova\request\model\InterfaceOptions;
+use Paynova\request\model\ProfilePaymentOptions;
+use Paynova\request\model\LineItemCollection;
+
 class RequestInitializePaymentTest extends PHPUnit_Framework_TestCase {
 	public function test_construct() {
 		$request = new RequestInitializePayment();
-		$this->assertInstanceOf("RequestInitializePayment", $request);
+		$this->assertInstanceOf("Paynova\\request\\RequestInitializePayment", $request);
 		return $request;
 	}
 	
@@ -32,7 +39,7 @@ class RequestInitializePaymentTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_paymentMethods(RequestInitializePayment $request) {
 		$request->paymentMethods(new PaymentMethodCollection());
-		$this->assertInstanceOf("PaymentMethodCollection",$request->paymentMethods());
+		$this->assertInstanceOf("Paynova\\request\\model\\PaymentMethodCollection",$request->paymentMethods());
 	}
 	
 	/**
@@ -41,7 +48,7 @@ class RequestInitializePaymentTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_customData(RequestInitializePayment $request) {
 		$request->customData(new CustomDataCollection());
-		$this->assertInstanceOf("CustomDataCollection",$request->customData());
+		$this->assertInstanceOf("Paynova\\request\\model\\CustomDataCollection",$request->customData());
 	}
 	
 	/**
@@ -78,7 +85,7 @@ class RequestInitializePaymentTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_interfaceOptions(RequestInitializePayment $request) {
 		$request->interfaceOptions(new InterfaceOptions());
-		$this->assertInstanceOf("InterfaceOptions",$request->interfaceOptions());
+		$this->assertInstanceOf("Paynova\\request\\model\\InterfaceOptions",$request->interfaceOptions());
 	}
 	
 	/**
@@ -87,7 +94,7 @@ class RequestInitializePaymentTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_profilePaymentOptions(RequestInitializePayment $request) {
 		$request->profilePaymentOptions(new ProfilePaymentOptions());
-		$this->assertInstanceOf("ProfilePaymentOptions",$request->profilePaymentOptions());
+		$this->assertInstanceOf("Paynova\\request\\model\\ProfilePaymentOptions",$request->profilePaymentOptions());
 	}
 	
 	/**
@@ -96,7 +103,7 @@ class RequestInitializePaymentTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_lineItems(RequestInitializePayment $request) {
 		$request->lineItems(new LineItemCollection());
-		$this->assertInstanceOf("LineItemCollection",$request->lineItems());
+		$this->assertInstanceOf("Paynova\\request\\model\\LineItemCollection",$request->lineItems());
 	}
 	
 	

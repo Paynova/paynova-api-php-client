@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request;
+
+use Paynova\http\HttpConfig;
+use Paynova\util\Util;
+
 /**
  * service: 	FinalizeAuthorization
  * type: 		request
@@ -18,7 +23,7 @@ class RequestFinalizeAuthorization extends Request {
 	public function __construct($http = null) {
 		parent::__construct(array(
 				"orderId","transactionId","totalAmount", 
-				"lineItems" => "LineItemCollection",
+				"lineItems" => "Paynova\\request\\model\\LineItemCollection",
 				"invoiceId"
 			),
 			array(
@@ -57,7 +62,7 @@ class RequestFinalizeAuthorization extends Request {
 	 * transactionId setter/getter
 	 * The unique id of the transaction (authorization) that you received from Paynova.
 	 * @param string $value (optional) used when setting
-	 * @return RequestInitializePayment or string transactionId
+	 * @return RequestFinalizeAuthorization or string transactionId
 	 */
 	public function transactionId($value = null) {  return $this->setOrGet(__FUNCTION__,$value); }
 	
@@ -65,7 +70,7 @@ class RequestFinalizeAuthorization extends Request {
 	 * totalAmount setter/getter
 	 * The total amount to finalize. The amount must be equal to or less than the original authorized amount.
 	 * @param float $value (optional) used when setting
-	 * @return RequestInitializePayment or float totalAmount
+	 * @return RequestFinalizeAuthorization or float totalAmount
 	 */
 	public function totalAmount($value = null) {  return $this->setOrGet(__FUNCTION__,$value); }
 	
@@ -78,7 +83,7 @@ class RequestFinalizeAuthorization extends Request {
 	 * @return LineItemCollection
 	 */
 	public function lineItems($object = null) {
-		if($object!=null)Util::validateObject($object, "LineItemCollection" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\LineItemCollection" );
 		return $this->setOrGet(__FUNCTION__,$object);
 	}
 	
@@ -86,7 +91,7 @@ class RequestFinalizeAuthorization extends Request {
 	 * invoiceId setter/getter
 	 * Your identifier for the invoice. For invoice payment methods, this identifier will be printed on the invoice and is required.
 	 * @param string $value (optional) used when setting
-	 * @return RequestInitializePayment or string invoiceId
+	 * @return RequestFinalizeAuthorization or string invoiceId
 	 */
 	public function invoiceId($value = null) {  return $this->setOrGet(__FUNCTION__,$value); }
 	

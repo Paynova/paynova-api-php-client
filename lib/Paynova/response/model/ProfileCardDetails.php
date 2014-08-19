@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\response\model;
+
+use Paynova\model\Instance;
+
 /**
  * class ProfileCardDetails
  * part of service: 	see response/model/ProfileCardDetailsCollection

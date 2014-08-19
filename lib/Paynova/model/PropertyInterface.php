@@ -1,10 +1,11 @@
 <?php
+namespace Paynova\model;
 /**
  * interface PropertyInterface
  * 
  * Known implementing classes model/Instance, model/PropertyItemCollection
  *
- * @package Paynova/http
+ * @package Paynova/model
  * @copyright Paynova 2014
  */
 interface PropertyInterface {

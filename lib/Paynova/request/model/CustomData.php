@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+
 /**
  * class CustomData
  * part of service: 	Annul Authorization, Initialize Payment

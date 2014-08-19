@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\response\model;
+
+use Paynova\model\Instance;
+
 /**
  * class Status
  * part of service: 	All API service calls (responses)
@@ -16,7 +20,7 @@ class Status extends Instance {
 		parent::__construct(array(
 			"isSuccess","errorNumber","statusKey",
 			"statusMessage",
-			"errors"=>"ErrorCollection",
+			"errors"=>"Paynova\\response\\model\\ErrorCollection",
 			"exceptionDetails"
 				
 		));

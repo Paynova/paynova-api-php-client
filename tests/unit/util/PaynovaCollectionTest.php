@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\util\PaynovaCollection;
+
 class Foo {
 	public $var1;
 	public $var2;

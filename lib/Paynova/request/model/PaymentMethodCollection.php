@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\PropertyItemCollection;
+
 /**
  * class PaymentMethodCollection can store a collection of PaymentMethod objects
  * part of service: 	Initialize Payment 
@@ -21,6 +25,6 @@ class PaymentMethodCollection extends PropertyItemCollection{
 	 * @return string
 	 */
 	public static function getClassnameOfTypeToStore() {
-		return "PaymentMethod";
+		return "Paynova\\request\\model\\PaymentMethod";
 	}
 }

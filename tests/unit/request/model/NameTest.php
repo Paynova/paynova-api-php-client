@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\request\model\Name;
+use Paynova\request\model\Address;
+
 class NameTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_propertiesAgainstSignature(){

@@ -1,4 +1,10 @@
 <?php
+namespace Paynova\response;
+
+use Paynova\model\Instance;
+use Paynova\http\HttpEvent;
+use Paynova\exception\PaynovaException;
+
 /**
  * class Response
  * This is the base class for all Responses
@@ -26,7 +32,7 @@ abstract class Response extends Instance {
 	 */
 	protected function __construct($signature){
 		parent::__construct(
-				array_merge(array("status"=>"Status"),$signature)
+				array_merge(array("status"=>"Paynova\\response\\model\\Status"),$signature)
 		);
 	}
 	

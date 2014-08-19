@@ -1,4 +1,7 @@
 <?php
+namespace Paynova\util;
+
+use \Iterator;
 /**
  * class PaynovaIterator
  * Is an Iterator object that contains functionality to loop over an array of objects

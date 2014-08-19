@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+use Paynova\util\Util;
+
 /**
  * class TravelSegment
  * part of service: 	see Paynova/request/model/TravelSegmentCollection
@@ -29,7 +34,7 @@ abstract class TravelSegment extends Instance {
 								"departureCountryCode",
 								"arrivalDate","arrivalTime","arrivalCountryCode",
 								"carrierDesignator",
-								"tickets"=>"TicketCollection"
+								"tickets"=>"Paynova\\request\\model\\TicketCollection"
 						
 						),
 						$signature
@@ -119,7 +124,7 @@ abstract class TravelSegment extends Instance {
 	 * @return TicketCollection
 	 */
 	public function tickets($object = null) {
-		if($object != null)Util::validateObject($object, "TicketCollection"); 
+		if($object != null)Util::validateObject($object, "Paynova\\request\\model\\TicketCollection"); 
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	

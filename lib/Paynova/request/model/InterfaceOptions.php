@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+
 /**
  * class InterfaceOptions
  * part of service: 	InitializePayment
@@ -100,7 +104,7 @@ class InterfaceOptions extends Instance {
 	 * urlRedirectPending setter/getter
 	 * The URL on your website to which we should redirect the customer upon a payment being in either 
 	 * an indeterminable or pending state. Payment methods which are not "real-time" 
-	 * (for example, Laschrift/ELV, †berweisung) use this status.
+	 * (for example, Laschrift/ELV, ï¿½berweisung) use this status.
 	 * @param string $value (optional) used when setting
 	 * @return InterfaceOptions or string urlRedirectPending
 	 */

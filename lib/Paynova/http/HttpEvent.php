@@ -1,4 +1,7 @@
 <?php
+namespace Paynova\http;
+
+use Paynova\model\Instance;
 /**
  * class HttpEvent is the result of a HTTP call
  * Information found here is 

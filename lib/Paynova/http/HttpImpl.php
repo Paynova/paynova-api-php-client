@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\http;
+
+use Paynova\exception\PaynovaExceptionHttp;
+use Paynova\exception\PaynovaExceptionApiCredentialsNotSet;
+
 /**
  * class HttpImpl is used for http communication with Paynova api server
  * It implements Http
@@ -14,10 +19,6 @@ class HttpImpl implements Http
 	 */
 	public function __construct() { }
 	
-	
-	public function put($restPath, $params) {
-		throw PaynovaException("PUT is not supported, yet");
-	}
 	
 	/**
 	 * Do a REST DELETE request
@@ -146,15 +147,14 @@ class HttpImpl implements Http
 				"responseBody"		=>	substr($response, $responseHeaderSize)
 		));
 		
-		curl_close($ch);
-		
-		
 		if($response == FALSE) {
 			$this->_throwHttpException(
 						$httpEvent,
 						"Something went wrong when doing curl_exec(), curl_error = ".curl_error($ch)
 			);
 		}
+		
+		curl_close($ch);
 		
 		$acceptType 	= 	$this->_getSpecificHeader("Accept",			$httpEvent->requestHeader());
 		$contentType 	=  	$this->_getSpecificHeader("Content-type",	$httpEvent->responseHeader());

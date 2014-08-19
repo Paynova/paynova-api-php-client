@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+use Paynova\util\Util;
+
 /**
  * class Customer
  * part of service: 	CreateOrder
@@ -16,7 +21,7 @@ class Customer extends Instance {
 	public function __construct() {
 		parent::__construct(array(
 			"customerId","emailAddress", 
-			"name"=> "Name",
+			"name"=> "Paynova\\request\\model\\Name",
 			"homeTelephone","workTelephone","mobileTelephone" 
 		));	
 	}
@@ -44,7 +49,7 @@ class Customer extends Instance {
 	 * @return Name
 	 */
 	public function name($object = null) { 
-		if($object!=null)Util::validateObject($object, "Name");
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\Name");
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	

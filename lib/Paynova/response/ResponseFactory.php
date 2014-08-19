@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\response;
+
+use Paynova\http\HttpEvent;
+
 /**
  *
  * class ResponseFactory is used to create an Response object
@@ -31,6 +35,7 @@ class ResponseFactory {
 	 * @param string $requestClassName name of the Request subclass
 	 */
 	private static function _getResponseClass($httpEventRequestCreator) {
+		$httpEventRequestCreator = str_replace("\\request\\","\\response\\",$httpEventRequestCreator);
 		return str_replace("Request","Response",$httpEventRequestCreator);
 	}
 	

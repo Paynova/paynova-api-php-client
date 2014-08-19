@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\util;
+
+use \ArrayAccess;
+
 /**
  * class PaynovaCollection
  * Act as an Collection of objects of a certain type. It uses Util::validateObject()

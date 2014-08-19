@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request;
+
+use Paynova\http\HttpConfig;
+use Paynova\util\Util;
+
 /**
  * service: 	Initialize Payment
  * type: 		request
@@ -25,12 +30,12 @@ class RequestInitializePayment extends Request {
 	public function __construct($http = null) {
 		parent::__construct(array(
 				"orderId","totalAmount", "paymentChannelId",
-				"paymentMethods" => "PaymentMethodCollection",
-				"customData" => "CustomDataCollection",
+				"paymentMethods" => "Paynova\\request\\model\\PaymentMethodCollection",
+				"customData" => "Paynova\\request\\model\\CustomDataCollection",
 				"sessionTimeout","routingIndicator","fraudScreeningProfile",
-				"interfaceOptions" => "InterfaceOptions",
-				"profilePaymentOptions" => "ProfilePaymentOptions",
-				"lineItems" => "LineItemCollection"
+				"interfaceOptions" => "Paynova\\request\\model\\InterfaceOptions",
+				"profilePaymentOptions" => "Paynova\\request\\model\\ProfilePaymentOptions",
+				"lineItems" => "Paynova\\request\\model\\LineItemCollection"
 			),
 			array(
 				"orderId","totalAmount","paymentChannelId",
@@ -87,7 +92,7 @@ class RequestInitializePayment extends Request {
 	 * @return PaymentMethodCollection
 	 */
 	public function paymentMethods($object = null) {
-		if($object != null)Util::validateObject($object, "PaymentMethodCollection"); 
+		if($object != null)Util::validateObject($object, "Paynova\\request\\model\\PaymentMethodCollection"); 
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -100,7 +105,7 @@ class RequestInitializePayment extends Request {
 	 * @return CustomDataCollection
 	 */
 	public function customData($object = null) { 
-		if($object != null)Util::validateObject($object, "CustomDataCollection");
+		if($object != null)Util::validateObject($object, "Paynova\\request\\model\\CustomDataCollection");
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -137,7 +142,7 @@ class RequestInitializePayment extends Request {
 	 * @return InterfaceOptions
 	 */
 	public function interfaceOptions($object = null) {  
-		if($object != null)Util::validateObject($object, "InterfaceOptions");
+		if($object != null)Util::validateObject($object, "Paynova\\request\\model\\InterfaceOptions");
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -148,7 +153,7 @@ class RequestInitializePayment extends Request {
 	 * @return ProfilePaymentOptions
 	 */
 	public function profilePaymentOptions($object = null) {
-		if($object != null)Util::validateObject($object, "ProfilePaymentOptions");
+		if($object != null)Util::validateObject($object, "Paynova\\request\\model\\ProfilePaymentOptions");
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -160,7 +165,7 @@ class RequestInitializePayment extends Request {
 	 * @return LineItemCollection
 	 */
 	public function lineItems($object = null) {
-		if($object!=null)Util::validateObject($object, "LineItemCollection" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\LineItemCollection" );
 		return $this->setOrGet(__FUNCTION__,$object);
 	}
 	

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
+use Paynova\model\Instance;
 class FooInstance extends Instance {
 	
 	public function __construct($signature) {
@@ -7,20 +8,6 @@ class FooInstance extends Instance {
 	}
 }
 class InstanceTest extends PHPUnit_Framework_TestCase {
-	
-	/*
-	 * public function getPropertiesAsArray($omitEmpty = true);
-	
-	public function getPropertiesAsJson();
-	
-	public function isEmpty();
-	
-	public function __toString();
-	 */
-	
-	public function testConstructor() {
-		new FooInstance(array("property1","property2"));
-	}
 	
 	public function testGetPropertiesAsArray() {
 		$foo = new FooInstance(array("property1","property2"));

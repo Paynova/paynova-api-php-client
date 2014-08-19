@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+use Paynova\util\Util;
+
 /**
  * class Passenger
  * part of service: 	see Paynova/request/model/Ticket
@@ -15,7 +20,7 @@ class Passenger extends Instance {
 	 */
 	public function __construct() {
 		parent::__construct(array(
-			"name"=>"Name",
+			"name"=>"Paynova\\request\\model\\Name",
 			"telephone","emailAddress"
 		));
 	}
@@ -27,7 +32,7 @@ class Passenger extends Instance {
 	 * @return Name
 	 */
 	public function name($object = null) {
-		if($object !=null)Util::validateObject($object, "Name");
+		if($object !=null)Util::validateObject($object, "Paynova\\request\\model\\Name");
 		return $this->setOrGet(__FUNCTION__,$object);
 	}
 	

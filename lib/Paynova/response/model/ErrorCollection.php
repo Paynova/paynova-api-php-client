@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\response\model;
+
+use Paynova\model\PropertyItemCollection;
+
 /**
  * class ErrorCollection can store a collection of Error objects
  * part of service: 	All services that returns errors
@@ -20,7 +24,7 @@ class ErrorCollection extends PropertyItemCollection {
 	 * @return string
 	 */
 	public static function getClassnameOfTypeToStore() {
-		return "Error";
+		return "Paynova\\response\\model\\Error";
 	}
 	
 }

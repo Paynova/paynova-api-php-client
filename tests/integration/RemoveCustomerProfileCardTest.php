@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__."/../TestHelper.php";
+
+use Paynova\request\RequestRemoveCustomerProfileCard;
+
 class RemoveCustomerProfileCardTest extends PHPUnit_Framework_TestCase {
 	
 	/**
@@ -16,6 +19,6 @@ class RemoveCustomerProfileCardTest extends PHPUnit_Framework_TestCase {
 		$mockHttp = new HttpMock(create_function('','return TestHelper::factoryHttpEventWithSuccess("SUCCESS");'));
 		$request->setHttp($mockHttp);
 		$response = $request->request();
-		$this->assertInstanceOf("Status",$response->status());
+		$this->assertInstanceOf("Paynova\\response\\model\\Status",$response->status());
 	}
 }

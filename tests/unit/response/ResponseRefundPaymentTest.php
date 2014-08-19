@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\response\ResponseRefundPayment;
+
 class ResponseRefundPaymentTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_factoryByHttpEvent() {
@@ -8,7 +10,7 @@ class ResponseRefundPaymentTest extends PHPUnit_Framework_TestCase {
 		
 		$response = ResponseRefundPayment::factoryByHttpEvent($httpEvent);
 		
-		$this->assertInstanceOf("ResponseRefundPayment",$response);
+		$this->assertInstanceOf("Paynova\\response\\ResponseRefundPayment",$response);
 		return $response;
 	}
 
@@ -16,7 +18,7 @@ class ResponseRefundPaymentTest extends PHPUnit_Framework_TestCase {
 	 * @depends test_factoryByHttpEvent
 	 */
 	public function test_status(ResponseRefundPayment $response) {
-		$this->assertInstanceOf("Status",$response->status());
+		$this->assertInstanceOf("Paynova\\response\\model\\Status",$response->status());
 	}
 	
 	/**

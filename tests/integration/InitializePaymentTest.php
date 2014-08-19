@@ -1,5 +1,10 @@
 <?php
 require_once __DIR__."/../TestHelper.php";
+
+use Paynova\request\RequestCreateOrder;
+use Paynova\request\RequestInitializePayment;
+use Paynova\request\model\InterfaceOptions;
+
 class InitializePaymentTest extends PHPUnit_Framework_TestCase {
 	
 	/**

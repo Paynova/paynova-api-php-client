@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request;
+
+use Paynova\http\HttpConfig;
+
 /**
  * service: 	GetCustomerProfile
  * type: 		request

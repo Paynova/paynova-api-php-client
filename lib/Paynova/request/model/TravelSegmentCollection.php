@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\PropertyItemCollection;
+
+
 /**
  * class TravelSegmentCollection stores objects of class TravelSegments 
  * part of service: 	see Paynova/request/model/TravelData 
@@ -20,7 +25,7 @@ class TravelSegmentCollection extends PropertyItemCollection{
 	 * @return string
 	 */
 	public static function getClassnameOfTypeToStore() {
-		return "TravelSegment";
+		return "Paynova\\request\\model\\TravelSegment";
 	}
 	
 }

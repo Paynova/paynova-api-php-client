@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request;
+
+use Paynova\http\HttpConfig;
+use Paynova\util\Util;
+
 /**
  * service: 	RefundPayment
  * type: 		request
@@ -17,7 +22,7 @@ class RequestRefundPayment extends Request {
 	public function __construct($http = null) {
 		parent::__construct(array(
 				"orderId","transactionId","totalAmount", 
-				"lineItems" => "LineItemCollection",
+				"lineItems" => "Paynova\\request\\model\\LineItemCollection",
 				"invoiceId"
 			),
 			array(
@@ -82,7 +87,7 @@ class RequestRefundPayment extends Request {
 	 * @return LineItemCollection
 	 */
 	public function lineItems($object = null) {
-		if($object!=null)Util::validateObject($object, "LineItemCollection" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\LineItemCollection" );
 		return $this->setOrGet(__FUNCTION__,$object);
 	}
 	

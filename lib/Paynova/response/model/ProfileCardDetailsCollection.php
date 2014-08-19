@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\response\model;
+
+use Paynova\model\PropertyItemCollection;
+
 /**
  * class ProfileCardDetailsCollection can store a collection of ProfileCardDetails objects
  * part of service: 	Get Customer Profile
@@ -27,6 +31,6 @@ class ProfileCardDetailsCollection extends PropertyItemCollection{
 	 * @return string classname
 	 */
 	public static function getClassnameOfTypeToStore() {
-		return "ProfileCardDetails";
+		return "Paynova\\response\\model\\ProfileCardDetails";
 	}
 }

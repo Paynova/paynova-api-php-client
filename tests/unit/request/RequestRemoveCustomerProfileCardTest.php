@@ -1,11 +1,13 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\request\RequestRemoveCustomerProfileCard;
+
 class RequestRemoveCustomerProfileCardTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_construct() {
 		$request = new RequestRemoveCustomerProfileCard();
-		$this->assertInstanceOf("RequestRemoveCustomerProfileCard", $request);
+		$this->assertInstanceOf("Paynova\\request\\RequestRemoveCustomerProfileCard", $request);
 		return $request;
 	}
 	
@@ -44,7 +46,7 @@ class RequestRemoveCustomerProfileCardTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	/**
-	 * @expectedException PaynovaExceptionRequiredPropertyMissing
+	 * @expectedException Paynova\exception\PaynovaExceptionRequiredPropertyMissing
 	 */
 	public function test_requestWithInsufficentParametersSet() {
 		$request = RequestRemoveCustomerProfileCard::factory(array(

@@ -1,4 +1,10 @@
 <?php
+namespace Paynova\request;
+
+use Paynova\http\HttpConfig;
+use Paynova\util\Util;
+use Paynova\request\model\Customer;
+
 /**
  *
  * service: 	CreateOrder
@@ -20,10 +26,10 @@ class RequestCreateOrder extends Request {
 	public function __construct($http = null) {
 		parent::__construct(array(
 				"orderNumber","currencyCode","totalAmount",
-				"customer"	=> "Customer",
-				"billTo"	=> "NameAddress",
-				"shipTo"	=> "NameAddress",
-				"lineItems"	=> "LineItemCollection",
+				"customer"	=> "Paynova\\request\\model\\Customer",
+				"billTo"	=> "Paynova\\request\\model\\NameAddress",
+				"shipTo"	=> "Paynova\\request\\model\\NameAddress",
+				"lineItems"	=> "Paynova\\request\\model\\LineItemCollection",
 				"orderDescription","salesChannel","salesLocationId" 
 			),
 			array("orderNumber","currencyCode","totalAmount"),
@@ -98,7 +104,7 @@ class RequestCreateOrder extends Request {
 	 * @return Customer
 	 */
 	public function customer($object = null) {
-		if($object!=null)Util::validateObject($object, "Customer" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\Customer" );
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -109,7 +115,7 @@ class RequestCreateOrder extends Request {
 	 * @return NameAddress
 	 */
 	public function billTo($object = null) { 
-		if($object!=null)Util::validateObject($object, "NameAddress" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\NameAddress" );
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -120,7 +126,7 @@ class RequestCreateOrder extends Request {
 	 * @return NameAddress
 	 */
 	public function shipTo($object = null) { 
-		if($object!=null)Util::validateObject($object, "NameAddress" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\NameAddress" );
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -131,7 +137,7 @@ class RequestCreateOrder extends Request {
 	 * @return LineItemCollection
 	 */
 	public function lineItems($object = null) {
-		if($object!=null)Util::validateObject($object, "LineItemCollection" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\LineItemCollection" );
 		return $this->setOrGet(__FUNCTION__,$object);
 	}
 	

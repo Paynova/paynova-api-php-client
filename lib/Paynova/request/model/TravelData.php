@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+use Paynova\util\Util;
+
 /**
  * class TravelData 
  * part of service: 	see Paynova/request/model/LineItem 
@@ -14,7 +19,7 @@ class TravelData extends Instance {
 	public function __construct() {
 		parent::__construct(array(
 			"bookingReference",
-			"travelSegments"=>"TravelSegmentCollection",
+			"travelSegments"=>"Paynova\\request\\model\\TravelSegmentCollection",
 				
 		));
 	}

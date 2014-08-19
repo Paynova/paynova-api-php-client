@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\response\model\Status;
+
 class StatusTest extends PHPUnit_Framework_TestCase {
 	
 	
@@ -15,7 +17,7 @@ class StatusTest extends PHPUnit_Framework_TestCase {
 				
 		);
 		$status = Status::factory($arr);
-		$this->assertInstanceOf("Status",$status);
+		$this->assertInstanceOf("Paynova\\response\\model\\Status",$status);
 		
 	}
 }

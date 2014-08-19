@@ -20,6 +20,8 @@
 		"phpunit/dbunit" : "~1"
 	},
 	"autoload" : {
-	    "classmap": ["lib/"]
+		"psr-0" : {
+			"Paynova\\" : "lib/"
+		}
 	}
 }

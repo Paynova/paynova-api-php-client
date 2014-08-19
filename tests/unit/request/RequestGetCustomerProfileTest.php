@@ -1,11 +1,13 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\request\RequestGetCustomerProfile;
+
 class RequestGetCustomerProfileTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_construct() {
 		$request = new RequestGetCustomerProfile();
-		$this->assertInstanceOf("RequestGetCustomerProfile", $request);
+		$this->assertInstanceOf("Paynova\\request\\RequestGetCustomerProfile", $request);
 		return $request;
 	}
 	
@@ -34,7 +36,7 @@ class RequestGetCustomerProfileTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	/**
-	 * @expectedException PaynovaExceptionRequiredPropertyMissing
+	 * @expectedException Paynova\exception\PaynovaExceptionRequiredPropertyMissing
 	 */
 	public function test_requestWithInsufficentParametersSet() {
 		$request = RequestGetCustomerProfile::factory(array(

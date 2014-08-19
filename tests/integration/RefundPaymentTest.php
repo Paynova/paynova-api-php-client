@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../TestHelper.php";
 
+use Paynova\request\RequestRefundPayment;
+
 class RefundPaymentTest extends PHPUnit_Framework_TestCase {
 	
 	/**
@@ -23,9 +25,9 @@ class RefundPaymentTest extends PHPUnit_Framework_TestCase {
 		
 		$response = $request->request();
 		
-		$this->assertInstanceOf("ResponseRefundPayment",$response);
+		$this->assertInstanceOf("Paynova\\response\\ResponseRefundPayment",$response);
 		
-		$this->assertInstanceOf("Status",$response->status());
+		$this->assertInstanceOf("Paynova\\response\\model\\Status",$response->status());
 		
 		$this->assertNotEmpty($response->status->statusKey());
 	}

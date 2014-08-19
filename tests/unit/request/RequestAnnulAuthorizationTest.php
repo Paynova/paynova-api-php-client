@@ -1,11 +1,16 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\request\Request;
+use Paynova\request\RequestAnnulAuthorization;
+use Paynova\request\model\LineItemCollection;
+use Paynova\request\model\CustomDataCollection;
+
 class RequestAnnulAuthorizationTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_construct() {
 		$request = new RequestAnnulAuthorization();
-		$this->assertInstanceOf("RequestAnnulAuthorization", $request);
+		$this->assertInstanceOf("Paynova\\request\\RequestAnnulAuthorization", $request);
 		return $request;
 	}
 	
@@ -42,7 +47,7 @@ class RequestAnnulAuthorizationTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_lineItems(RequestAnnulAuthorization $request) {
 		$request->lineItems(new LineItemCollection());
-		$this->assertInstanceOf("LineItemCollection",$request->lineItems());
+		$this->assertInstanceOf("Paynova\\request\\model\\LineItemCollection",$request->lineItems());
 	}
 	
 	/**
@@ -51,7 +56,7 @@ class RequestAnnulAuthorizationTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_customData(RequestAnnulAuthorization $request) {
 		$request->customData(new CustomDataCollection());
-		$this->assertInstanceOf("CustomDataCollection",$request->customData());
+		$this->assertInstanceOf("Paynova\\request\\model\\CustomDataCollection",$request->customData());
 	}
 	
 	
@@ -70,7 +75,7 @@ class RequestAnnulAuthorizationTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	/**
-	 * @expectedException PaynovaExceptionRequiredPropertyMissing
+	 * @expectedException Paynova\exception\PaynovaExceptionRequiredPropertyMissing
 	 */
 	public function test_requestWithInsufficentParametersSet() {
 		$request = RequestAnnulAuthorization::factory(array(

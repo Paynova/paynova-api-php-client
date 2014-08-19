@@ -1,11 +1,17 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
+
+use Paynova\request\model\PaymentMethodCollection;
+use Paynova\request\model\PaymentMethod;
+use Paynova\request\model\Name;
+
 class PaymentMethodCollectionTest extends PHPUnit_Framework_TestCase {
 
 	public function test_construct(){
-		$this->assertInstanceOf("PaymentMethodCollection",new PaymentMethodCollection());
+		$this->assertInstanceOf("Paynova\\request\\model\\PaymentMethodCollection",new PaymentMethodCollection());
 		
 	}
+	
 	
 	public function test_factoryVsPush() {
 		$coll1 = new PaymentMethodCollection();
@@ -41,6 +47,6 @@ class PaymentMethodCollectionTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	public function test_typeObjectsToStore() {
-		$this->assertEquals(PaymentMethodCollection::getClassnameOfTypeToStore(),"PaymentMethod");
+		$this->assertEquals(PaymentMethodCollection::getClassnameOfTypeToStore(),"Paynova\\request\\model\\PaymentMethod");
 	}
 }

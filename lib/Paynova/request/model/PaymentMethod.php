@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+
 /**
  * class PaymentMethod
  * part of service: 	see Paynova/request/model/PaymentMethodCollection

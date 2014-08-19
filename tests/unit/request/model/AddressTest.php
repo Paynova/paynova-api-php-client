@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\request\model\Address;
+
 class AddressTest extends PHPUnit_Framework_TestCase {
 	
 	

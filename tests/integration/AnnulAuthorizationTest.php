@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__."/../TestHelper.php";
 
+use Paynova\request\RequestAnnulAuthorization;
+use Paynova\response\ResponseAnnulAuthorization;
+
 class AnnulAuthorizationTest extends PHPUnit_Framework_TestCase {
 	
 	/**
@@ -19,9 +22,9 @@ class AnnulAuthorizationTest extends PHPUnit_Framework_TestCase {
 				->totalAmount(100.00);
 		
 		$response = $request->request();
-		$this->assertInstanceOf("ResponseAnnulAuthorization",$response);
+		$this->assertInstanceOf("Paynova\\response\\ResponseAnnulAuthorization",$response);
 		
-		$this->assertInstanceOf("Status",$response->status());
+		$this->assertInstanceOf("Paynova\\response\\model\\Status",$response->status());
 		
 		$this->assertNotEmpty($response->status->statusKey());
 		

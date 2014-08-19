@@ -1,4 +1,6 @@
 <?php
+namespace Paynova\exception;
+
 /**
  * class PaynovaExceptionConfig
  * @package Paynova/exception

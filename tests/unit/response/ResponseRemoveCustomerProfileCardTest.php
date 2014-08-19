@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\response\ResponseRemoveCustomerProfileCard;
+
 class ResponseRemoveCustomerProfileCardTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_factoryByHttpEvent() {
@@ -8,7 +10,7 @@ class ResponseRemoveCustomerProfileCardTest extends PHPUnit_Framework_TestCase {
 		
 		$response = ResponseRemoveCustomerProfileCard::factoryByHttpEvent($httpEvent);
 		
-		$this->assertInstanceOf("ResponseRemoveCustomerProfileCard",$response);
+		$this->assertInstanceOf("Paynova\\response\\ResponseRemoveCustomerProfileCard",$response);
 		return $response;
 	}
 	
@@ -16,6 +18,6 @@ class ResponseRemoveCustomerProfileCardTest extends PHPUnit_Framework_TestCase {
 	 * @depends test_factoryByHttpEvent
 	 */
 	public function test_status(ResponseRemoveCustomerProfileCard $response) {
-		$this->assertInstanceOf("Status",$response->status());
+		$this->assertInstanceOf("Paynova\\response\\model\\Status",$response->status());
 	}
 }

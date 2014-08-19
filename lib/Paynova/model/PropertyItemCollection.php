@@ -1,11 +1,18 @@
 <?php
+namespace Paynova\model;
+
+use \InvalidArgumentException;
+
+use Paynova\util\PaynovaCollection;
+use Paynova\util\Util;
+
 /**
  * class PropertyItemCollection can store objects that implements the PropertyInterface
  *
  * @package Paynova/http
  * @copyright Paynova 2014
  */
-abstract class PropertyItemCollection extends PaynovaCollection implements PropertyInterface {
+abstract class PropertyItemCollection extends PaynovaCollection implements PropertyInterface, ItemCollectionFactoryInterface {
 	
 	/**
 	 * @see util/PaynovaCollection::__construct()
@@ -73,7 +80,7 @@ abstract class PropertyItemCollection extends PaynovaCollection implements Prope
 			$classToStore = $class::getClassnameOfTypeToStore();
 			if(!is_array($item)) {
 				throw new InvalidArgumentException("Trying to create a ".$class." and adding ".$item." but it's not an array");
-			}else if(!in_array("PropertyInterface",class_implements($classToStore))) {
+			}else if(!in_array("Paynova\\model\\PropertyInterface",class_implements($classToStore))) {
 				throw new InvalidArgumentException(
 						"'".$classToStore."' does not implement the interface PropertyInterface and ".
 						"therefore not be added to '".$class."'"
@@ -103,7 +110,7 @@ abstract class PropertyItemCollection extends PaynovaCollection implements Prope
 	 * @param array $initArray
 	 * @return Object or null  
 	 */
-	private static function factoryFromFirstBestClass($classes,$initArray) {
+	public static function factoryFromFirstBestClass($classes,$initArray) {
 	foreach($classes as $c) {
 			if($c::canFactory($initArray)) {
 				return $c::factory($initArray);
@@ -138,10 +145,4 @@ abstract class PropertyItemCollection extends PaynovaCollection implements Prope
 		
 		return get_called_class()."[\n".implode(",", $arr)."\n]";
 	}
-	
-	/**
-	 * This method has to return what kind of type of object the collection stores
-	 * @return string classname of object to store
-	 */
-	abstract public static function getClassnameOfTypeToStore();
 }

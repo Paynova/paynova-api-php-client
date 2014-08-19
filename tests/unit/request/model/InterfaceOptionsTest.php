@@ -1,5 +1,9 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
+
+use Paynova\request\model\InterfaceOptions;
+use Paynova\request\model\Address;
+
 class InterfaceOptionsTest extends PHPUnit_Framework_TestCase {
 	
 	
@@ -17,7 +21,7 @@ class InterfaceOptionsTest extends PHPUnit_Framework_TestCase {
 				"urlCallback"=>"http://www.foo.com",
 		));
 		
-		$this->assertInstanceOf("InterfaceOptions",$obj);
+		$this->assertInstanceOf("Paynova\\request\\model\\InterfaceOptions",$obj);
 	}
 	
 	public function test_propertiesAgainstSignature(){

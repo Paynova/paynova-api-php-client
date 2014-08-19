@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../TestHelper.php";
 
+use Paynova\request\RequestFinalizeAuthorization;
+
 class FinalizeAuthorizationTest extends PHPUnit_Framework_TestCase {
 	
 	/**
@@ -23,8 +25,8 @@ class FinalizeAuthorizationTest extends PHPUnit_Framework_TestCase {
 		//$mockHttp = new HttpImpl();
 		$request->setHttp($mockHttp);
 		$response = $request->request();
-		$this->assertInstanceOf("ResponseFinalizeAuthorization",$response);
-		$this->assertInstanceOf("Status",$response->status());
+		$this->assertInstanceOf("Paynova\\response\\ResponseFinalizeAuthorization",$response);
+		$this->assertInstanceOf("Paynova\\response\\model\\Status",$response->status());
 		
 		$this->assertNotEmpty($response->status->statusKey());
 		

@@ -1,11 +1,14 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\request\model\LineItemCollection;
+use Paynova\request\RequestFinalizeAuthorization;
+
 class RequestFinalizeAuthorizationTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_construct() {
 		$request = new RequestFinalizeAuthorization();
-		$this->assertInstanceOf("RequestFinalizeAuthorization", $request);
+		$this->assertInstanceOf("Paynova\\request\\RequestFinalizeAuthorization", $request);
 		return $request;
 	}
 	
@@ -42,7 +45,7 @@ class RequestFinalizeAuthorizationTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_lineItems(RequestFinalizeAuthorization $request) {
 		$request->lineItems(new LineItemCollection());
-		$this->assertInstanceOf("LineItemCollection",$request->lineItems());
+		$this->assertInstanceOf("Paynova\\request\\model\\LineItemCollection",$request->lineItems());
 	}
 	
 	/**
@@ -70,7 +73,7 @@ class RequestFinalizeAuthorizationTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	/**
-	 * @expectedException PaynovaExceptionRequiredPropertyMissing
+	 * @expectedException Paynova\exception\PaynovaExceptionRequiredPropertyMissing
 	 */
 	public function test_requestWithInsufficentParametersSet() {
 		$request = RequestFinalizeAuthorization::factory(array(

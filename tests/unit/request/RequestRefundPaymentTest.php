@@ -1,11 +1,14 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\request\RequestRefundPayment;
+use Paynova\request\model\LineItemCollection;
+
 class RequestRefundPaymentTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_construct() {
 		$request = new RequestRefundPayment();
-		$this->assertInstanceOf("RequestRefundPayment", $request);
+		$this->assertInstanceOf("Paynova\\request\\RequestRefundPayment", $request);
 		return $request;
 	}
 	
@@ -42,7 +45,7 @@ class RequestRefundPaymentTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_lineItems(RequestRefundPayment $request) {
 		$request->lineItems(new LineItemCollection());
-		$this->assertInstanceOf("LineItemCollection",$request->lineItems());
+		$this->assertInstanceOf("Paynova\\request\\model\\LineItemCollection",$request->lineItems());
 	}
 	
 	/**
@@ -70,7 +73,7 @@ class RequestRefundPaymentTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	/**
-	 * @expectedException PaynovaExceptionRequiredPropertyMissing
+	 * @expectedException Paynova\exception\PaynovaExceptionRequiredPropertyMissing
 	 */
 	public function test_requestWithInsufficentParametersSet() {
 		$request = RequestRefundPayment::factory(array(

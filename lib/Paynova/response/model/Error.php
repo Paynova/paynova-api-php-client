@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\response\model;
+
+use Paynova\model\Instance;
+
 /**
  * class Error
  * part of service: 	See response/model/ErrorCollection

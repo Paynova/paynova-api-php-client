@@ -1,4 +1,6 @@
 <?php
+namespace Paynova\request\model;
+
 /**
  * class TravelSegmentAir for air travel segment
  * part of service: 	see Paynova/request/model/TravelSegment
@@ -25,9 +27,8 @@ class TravelSegmentAir extends TravelSegment {
 	/**
 	 * Overriding to force segmentType to be TravelSegment:SEGMENT_TYPE_AIR;
 	 */
-	public function segmentType() { 
-		$value = null;
-		if(func_num_args()>0) {
+	public function segmentType($value = null) { 
+		if($value!=null) {
 			$value = TravelSegment::SEGMENT_TYPE_AIR;
 		}
 		return $this->setOrGet(__FUNCTION__,$value); 

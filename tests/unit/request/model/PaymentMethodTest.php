@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\request\model\PaymentMethod;
+use Paynova\request\model\Address;
+
 class PaymentMethodTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_construct() {

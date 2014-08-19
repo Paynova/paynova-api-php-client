@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\exception\PaynovaException;
+
 /**
 * class CurrencyCode is helper class for currencies
 * 

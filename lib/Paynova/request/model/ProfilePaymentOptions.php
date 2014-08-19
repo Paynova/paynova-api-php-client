@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+use Paynova\util\Util;
+
 /**
  * class ProfilePaymentOptions
  * part of service: 	Initialize Payment 
@@ -15,7 +20,7 @@ class ProfilePaymentOptions extends Instance {
 	public function __construct() {
 		parent::__construct(array(
 				"profileId",
-				"profileCard"=>"ProfileCard",
+				"profileCard"=>"Paynova\\request\\model\\ProfileCard",
 				"displaySaveProfileCardOption"
 		));
 	}

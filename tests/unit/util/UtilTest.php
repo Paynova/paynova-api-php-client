@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use Paynova\request\model\Address;
+use Paynova\request\model\TravelSegmentAir;
+use Paynova\request\model\TravelSegmentRail;
+use Paynova\util\Util;
+
 
 class UtilTest extends PHPUnit_Framework_TestCase {
 	
@@ -9,7 +14,7 @@ class UtilTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_validateObjectFail() {
 		$address = new Address();
-		Util::validateObject($address, "Customer");
+		Util::validateObject($address, "Paynova\\request\\model\\Customer");
 	}
 	
 	/**
@@ -17,18 +22,18 @@ class UtilTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function test_validateArrayOfObjectsFail() {
 		$arr = array(new Address(), new Address());
-		Util::validateArrayOfObjects($arr,"Customer");
+		Util::validateArrayOfObjects($arr,"Paynova\\request\\model\\Customer");
 	}
 	
 	
 	public function test_getSubclasses() {
-		$subclasses = Util::getSubclasses("TravelSegment");
+		$subclasses = Util::getSubclasses("Paynova\\model\\Instance");
 		$this->assertTrue(count($subclasses)>0);
 	}
 	
 	
 	public function test_classIsAbstract() {
-		$this->assertTrue(Util::classIsAbstract("TravelSegment"));
+		$this->assertTrue(Util::classIsAbstract("Paynova\\request\\model\\TravelSegment"));
 	}
 	
 	

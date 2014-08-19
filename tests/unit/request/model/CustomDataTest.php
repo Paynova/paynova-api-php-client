@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
+
+use Paynova\request\model\CustomData;
+
 class CustomDataTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_constructor() {

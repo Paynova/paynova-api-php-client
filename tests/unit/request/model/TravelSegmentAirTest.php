@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\request\model\TravelSegmentAir;
+
 class TravelSegmentAirTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_factory(){
@@ -12,7 +14,7 @@ class TravelSegmentAirTest extends PHPUnit_Framework_TestCase {
 				)
 		
 		);
-		$this->assertInstanceOf("TravelSegmentAir",$obj1);
+		$this->assertInstanceOf("Paynova\\request\\model\\TravelSegmentAir",$obj1);
 		
 		$obj2 = new TravelSegmentAir();
 		$obj2->departureAirportCode("foo")

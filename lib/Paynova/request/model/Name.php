@@ -1,6 +1,10 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+
 /*
- * Checked 140506:08:09
+ * 
  */
 class Name extends Instance {
 	

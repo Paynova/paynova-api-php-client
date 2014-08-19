@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request;
+
+use Paynova\http\HttpConfig;
+use Paynova\util\Util;
+
 /**
  * service: 	AnnulAuthorization
  * type: 		request
@@ -18,8 +23,8 @@ class RequestAnnulAuthorization extends Request {
 	public function __construct($http = null) {
 		parent::__construct(array(
 				"orderId","transactionId","totalAmount", 
-				"lineItems" => "LineItemCollection",
-				"customData" => "CustomDataCollection"
+				"lineItems" => "Paynova\\request\\model\\LineItemCollection",
+				"customData" => "Paynova\\request\\model\\CustomDataCollection"
 			),
 			array(
 				"transactionId"
@@ -82,7 +87,7 @@ class RequestAnnulAuthorization extends Request {
 	 * @return LineItemCollection
 	 */
 	public function lineItems($object = null) {
-		if($object!=null)Util::validateObject($object, "LineItemCollection" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\LineItemCollection" );
 		return $this->setOrGet(__FUNCTION__,$object);
 	}
 	
@@ -96,7 +101,7 @@ class RequestAnnulAuthorization extends Request {
 	 * @return CustomDataCollection
 	 */
 	public function customData($object = null) {
-		if($object!=null)Util::validateObject($object, "CustomDataCollection" );
+		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\CustomDataCollection" );
 		return $this->setOrGet(__FUNCTION__,$object);
 	}
 	

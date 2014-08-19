@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../TestHelper.php";
 
+use Paynova\PaynovaConfig;
+
 class PaynovaConfigTest extends PHPUnit_Framework_TestCase {
 	
 	

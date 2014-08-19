@@ -1,4 +1,9 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+use Paynova\util\Util;
+
 /**
  * class LineItem
  * part of service: 	see Paynova/request/model/LineItemCollection
@@ -31,7 +36,7 @@ class LineItem extends Instance {
 				"productUrl","quantity","unitMeasure","unitAmountExcludingTax",
 				"taxPercent","totalLineTaxAmount","totalLineAmount",
 				"lineItemGroupKey",
-				"travelData"=>"TravelData"
+				"travelData"=>"Paynova\\request\\model\\TravelData"
 		));
 	}
 	
@@ -149,7 +154,7 @@ class LineItem extends Instance {
 	 * @return TravelData
 	 */
 	public function travelData($object = null) {
-		if($object != null)Util::validateObject($object,"TravelData"); 
+		if($object != null)Util::validateObject($object,"Paynova\\request\\model\\TravelData"); 
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 }

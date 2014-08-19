@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\response\model\ProfileCardDetails;
+
 class ProfileCardDetailsTest extends PHPUnit_Framework_TestCase {
 	
 	
@@ -13,7 +15,7 @@ class ProfileCardDetailsTest extends PHPUnit_Framework_TestCase {
 			"lastFour"=>7890
 				
 		));
-		$this->assertInstanceOf("ProfileCardDetails",$profile);
+		$this->assertInstanceOf("Paynova\\response\\model\\ProfileCardDetails",$profile);
 		
 	}
 }

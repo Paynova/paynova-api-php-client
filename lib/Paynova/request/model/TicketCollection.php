@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\PropertyItemCollection;
+
 /**
  * class TicketCollection can store a collection of Ticket objects
  * part of service: 	see Paynova/request/model/TravelSegment 
@@ -8,7 +12,7 @@
  */
 class TicketCollection extends PropertyItemCollection{
 	public function __construct() {
-		parent::__construct("Ticket");
+		parent::__construct("Paynova\\request\\model\\Ticket");
 	}
 	
 	/**
@@ -16,6 +20,6 @@ class TicketCollection extends PropertyItemCollection{
 	 * @return string
 	 */
 	public static function getClassnameOfTypeToStore() {
-		return "Ticket";
+		return "Paynova\\request\\model\\Ticket";
 	}
 }

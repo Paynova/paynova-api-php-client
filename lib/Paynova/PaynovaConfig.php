@@ -1,4 +1,9 @@
 <?php
+namespace Paynova;
+
+use \InvalidArgumentException;
+use Paynova\exception\PaynovaExceptionConfig; 
+
 /**
  * Paynova Config 
  * Stores server-endpoints, merchant-credentials
@@ -39,7 +44,7 @@ class PaynovaConfig
 		if (array_key_exists($name, $this->attributes)) {
 			return $this->attributes[$name];
 		} else {
-			throw new InvalidArgumentException('Undefined property on ' . get_class($this) . ': ' . $name, E_USER_NOTICE);
+			throw new \InvalidArgumentException('Undefined property on ' . get_class($this) . ': ' . $name, E_USER_NOTICE);
 			
 		}
 	

@@ -1,7 +1,15 @@
 <?php
-ini_set("display_errors",'on');
-include_once __DIR__."/../lib/Paynova.php";
+@ini_set('display_errors', 'on');
+@error_reporting(E_ALL | E_STRICT);
 include_once __DIR__."/../vendor/autoload.php";
+include_once __DIR__."/../lib/Paynova.php";
+use Paynova\PaynovaConfig;
+use Paynova\http\Http;
+use Paynova\http\HttpConfig;
+use Paynova\http\HttpEvent;
+use Paynova\exception\PaynovaException;
+
+
 //The file is a local setting file and not included in the project,
 //it just contains the below function
 @include_once __DIR__."/../local-config.php";
@@ -18,6 +26,7 @@ if(!function_exists("localConfig")) {
 		return $arr[$var];
 	}
 }
+
 class TestHelper {
 	
 	public static $_messagePrinted = false;
@@ -127,6 +136,7 @@ class TestHelper {
 		}
 	}
 }
+
 
 class HttpMock implements Http{
 	

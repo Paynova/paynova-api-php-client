@@ -1,7 +1,9 @@
 <?php
-/*
- * Checked 140506:08:10
- */
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+use Paynova\util\Util;
+
 class NameAddress extends Instance{
 	
 	
@@ -10,8 +12,8 @@ class NameAddress extends Instance{
 	 */
 	public function __construct() {
 		parent::__construct(array(
-			"name"		=> "Name",
-			"address"	=> "Address"
+			"name"		=> "Paynova\\request\\model\\Name",
+			"address"	=> "Paynova\\request\\model\\Address"
 		));	
 	}
 	
@@ -22,7 +24,7 @@ class NameAddress extends Instance{
 	 * @return Name
 	 */
 	public function name($object = null) { 
-		if($object!=null)Util::validateObject($object,"Name");
+		if($object!=null)Util::validateObject($object,"Paynova\\request\\model\\Name");
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -33,7 +35,7 @@ class NameAddress extends Instance{
 	 * @return Address
 	 */
 	public function address($object = null) { 
-		if($object!=null)Util::validateObject($object,"Address");
+		if($object!=null)Util::validateObject($object,"Paynova\\request\\model\\Address");
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 }

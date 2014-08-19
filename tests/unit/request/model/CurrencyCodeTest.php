@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__."/../../../TestHelper.php";
 
+use Paynova\request\model\CurrencyCode;
+
 class CurrencyCodeTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_currencies() {
@@ -23,7 +25,7 @@ class CurrencyCodeTest extends PHPUnit_Framework_TestCase {
 		
 	}
 	/**
-	 * @expectedException PaynovaException
+	 * @expectedException Paynova\exception\PaynovaException
 	 */
 	public function test_badValidation() {
 		CurrencyCode::validate("FOO");

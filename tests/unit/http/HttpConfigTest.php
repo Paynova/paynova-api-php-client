@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
+use \InvalidArgumentException;
+
+use \Paynova\http\HttpConfig;
+use \Paynova\exception\PaynovaExceptionConfig;
+
 class HttpConfigTest extends PHPUnit_Framework_TestCase {
 	
 
@@ -36,7 +41,7 @@ class HttpConfigTest extends PHPUnit_Framework_TestCase {
 	
 	/**
 	 * @runInSeparateProcess
-	 * @expectedException PaynovaExceptionConfig
+	 * @expectedException Paynova\exception\PaynovaExceptionConfig
 	 */
 	public function test_getDefaultConfigWithoutSettingCredentials() {
 		

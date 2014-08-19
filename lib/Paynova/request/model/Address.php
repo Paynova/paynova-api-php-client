@@ -1,4 +1,8 @@
 <?php
+namespace Paynova\request\model;
+
+use Paynova\model\Instance;
+
 /**
  * class Address
  * part of service: 	CreateOrder
