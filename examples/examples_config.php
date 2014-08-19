@@ -1,6 +1,8 @@
 <?php
 include "../lib/Paynova.php";
 
+use Paynova\PaynovaConfig;
+
 //The file is a local setting file and not included in the project,
 //it just contains the below function
 @include_once __DIR__."/../local-config.php";

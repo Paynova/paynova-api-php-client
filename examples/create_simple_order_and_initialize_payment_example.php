@@ -6,6 +6,10 @@
 */
 include "examples_config.php";
 
+use Paynova\request\RequestCreateOrder;
+use Paynova\request\RequestInitializePayment;
+use Paynova\request\model\InterfaceOptions;
+
 /*
  * Create an simple order
 * - simple cause only the most basic information

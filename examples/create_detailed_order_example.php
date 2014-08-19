@@ -1,10 +1,13 @@
 <?php
+ini_set('display_errors',1);
 /*
  * Set the credentials for calling the API server
  * in examples/examples_config.php
  * 
 */
 include "examples_config.php";
+
+use Paynova\request\RequestCreateOrder;
 
 $obj = RequestCreateOrder::factory(
 	array(
@@ -95,13 +98,19 @@ $obj = RequestCreateOrder::factory(
 	)
 );
 
-$response = $obj->request();
+
 //The status object
-if($response->status()->isSuccess==1) {
-	//echo $response->status();
-}else {
-	//Use the error collection
-	//$initResponse->status()->errors();
+try{
+	$response = $obj->request();
+	if($response->status()->isSuccess==1) {
+		echo $response->status();
+	}else {
+		//Use the error collection
+		//$initResponse->status()->errors();
+	}	
+}
+catch(Paynova\exception\PaynovaExceptionHttp $e){
+	echo $e->getMessage();
 }
 
 //The httpevent - inspect what was sent and received
