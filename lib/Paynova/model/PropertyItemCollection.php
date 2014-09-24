@@ -12,7 +12,7 @@ use Paynova\util\Util;
  * @package Paynova/http
  * @copyright Paynova 2014
  */
-abstract class PropertyItemCollection extends PaynovaCollection implements PropertyInterface, ItemCollectionFactoryInterface {
+abstract class PropertyItemCollection extends PaynovaCollection implements PropertyInterface, ItemCollectionInterface {
 	
 	/**
 	 * @see util/PaynovaCollection::__construct()
