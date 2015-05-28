@@ -27,8 +27,8 @@ class RequestCreateOrder extends Request {
 		parent::__construct(array(
 				"orderNumber","currencyCode","totalAmount",
 				"customer"	=> "Paynova\\request\\model\\Customer",
-				"billTo"	=> "Paynova\\request\\model\\NameAddress",
-				"shipTo"	=> "Paynova\\request\\model\\NameAddress",
+				"billTo"	=> "Paynova\\model\\NameAddress",
+				"shipTo"	=> "Paynova\\model\\NameAddress",
 				"lineItems"	=> "Paynova\\request\\model\\LineItemCollection",
 				"orderDescription","salesChannel","salesLocationId" 
 			),
@@ -115,7 +115,7 @@ class RequestCreateOrder extends Request {
 	 * @return NameAddress
 	 */
 	public function billTo($object = null) { 
-		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\NameAddress" );
+		if($object!=null)Util::validateObject($object, "Paynova\\model\\NameAddress" );
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	
@@ -126,7 +126,7 @@ class RequestCreateOrder extends Request {
 	 * @return NameAddress
 	 */
 	public function shipTo($object = null) { 
-		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\NameAddress" );
+		if($object!=null)Util::validateObject($object, "Paynova\\model\\NameAddress" );
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	

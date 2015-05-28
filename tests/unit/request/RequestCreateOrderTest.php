@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
-use Paynova\request\model\Name;
+use Paynova\model\Name;
 use Paynova\request\model\Customer;
 
 use Paynova\request\RequestCreateOrder;

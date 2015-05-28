@@ -136,6 +136,42 @@ class TestHelper {
 				
 		}
 	}
+	/**
+	 * 
+	 * @param unknown $thisObject
+	 * @param unknown $object
+	 * @param string $specialPropertyParamFunction (if a object has a special property that needs an argument 
+	 * 												of a special type send in a function that returns that. Example TravelSegmentAir)
+	 * 												$method, $param needs to be arguments
+	 * 												
+	 */
+	public static function assert_modelSignature($thisObject,$object,$specialPropertyParamFunction = null){
+		$signature = $object->getSignature();
+		foreach($signature as $key=>$value) {
+			$method = $value;
+			$param = "";
+			$assert = true;
+			if(!is_int($key) && class_exists($value)) {
+				$method=$key;
+	
+				$param = new $value();
+			}else {
+				$param = "foo";
+				$refl = new ReflectionMethod(get_class($object), $method);
+				//Only test properties with setter and getter
+				if($refl->getNumberOfParameters()<1){
+					$assert = false;
+				}else if($specialPropertyParamFunction != null && is_callable($specialPropertyParamFunction)){
+					//Check if any special param is needed
+					$param = $specialPropertyParamFunction($method,$param);
+				}
+			}
+			if($assert){
+				call_user_func_array(array($object,$method),array($param));
+				$thisObject->assertEquals(call_user_func_array(array($object,$method),array()),$param);
+			}
+		}
+	}
 }
 
 

@@ -1,5 +1,5 @@
 <?php
-namespace Paynova\request\model;
+namespace Paynova\model;
 
 use Paynova\model\Instance;
 

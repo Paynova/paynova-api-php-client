@@ -22,25 +22,13 @@ class TravelSegmentRailTest extends PHPUnit_Framework_TestCase {
 			->arrivalStationCode("foo");
 		$this->assertEquals($obj1,$obj2);
 	}
+	
 	/**
 	 * Asserts that all property-method(and working) are declared. Check this against the signature
 	 */
 	public function test_propertiesAgainstSignature(){
 		$object = new TravelSegmentRail();
-		$signature = $object->getSignature();
-		foreach($signature as $key=>$value) {
-			$method = $value;
-			$param = "";
-		
-			if(!is_int($key) && class_exists($value)) {
-				$method=$key;
-				$param = new $value();
-			}else {
-				if($value=="segmentType")$param ="RAIL";
-				else $param = "foo";
-			}
-			call_user_func_array(array($object,$method),array($param));
-			$this->assertEquals(call_user_func_array(array($object,$method),array()),$param);
-		}
+		$specialArgumentFunction = create_function('$method,$param','return $method=="segmentType"?Paynova\\request\\model\\TravelSegmentAir::SEGMENT_TYPE_RAIL:$param;');
+		TestHelper::assert_modelSignature($this,$object, $specialArgumentFunction);
 	}
 }

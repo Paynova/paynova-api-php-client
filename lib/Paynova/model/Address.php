@@ -1,5 +1,5 @@
 <?php
-namespace Paynova\request\model;
+namespace Paynova\model;
 
 use Paynova\model\Instance;
 
@@ -21,9 +21,10 @@ class Address extends Instance {
 	public function __construct() {
 		parent::__construct(array(
 			"street1","street2","street3","street4" ,
-			"city","postalCode","regionCode","countryCode" 
+			"city","postalCode","regionCode","countryCode","type" 
 		));
 	}
+	
 	
 	/**
 	 * street1 setter/getter
@@ -90,6 +91,11 @@ class Address extends Instance {
 	 */
 	public function countryCode($value = null) { return $this->setOrGet(__FUNCTION__,$value); }
 	
-	
+	/**
+	 * type of address setter/getter
+	 * Only applicable when returned by Paynova.
+	 * @return string type
+	 */
+	public function type() { return $this->setOrGet(__FUNCTION__,null); }
 	
 }

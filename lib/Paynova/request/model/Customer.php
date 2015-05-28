@@ -21,7 +21,7 @@ class Customer extends Instance {
 	public function __construct() {
 		parent::__construct(array(
 			"customerId","emailAddress", 
-			"name"=> "Paynova\\request\\model\\Name",
+			"name"=> "Paynova\\model\\Name",
 			"homeTelephone","workTelephone","mobileTelephone" 
 		));	
 	}
@@ -49,7 +49,7 @@ class Customer extends Instance {
 	 * @return Name
 	 */
 	public function name($object = null) { 
-		if($object!=null)Util::validateObject($object, "Paynova\\request\\model\\Name");
+		if($object!=null)Util::validateObject($object, "Paynova\\model\\Name");
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	

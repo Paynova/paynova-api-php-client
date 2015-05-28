@@ -41,7 +41,7 @@ class ProfilePaymentOptions extends Instance {
 	 * @return ProfileCard
 	 */
 	public function profileCard($object = null) {
-		if($object != null)Util::validateObject($object, "ProfileCard"); 
+		if($object != null)Util::validateObject($object, "Paynova\\request\\model\\ProfileCard"); 
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 	

@@ -47,7 +47,7 @@ abstract class TravelSegment extends Instance {
 	/**
 	 * segmentType setter/getter
 	 * The means of travel. 
-	 * See constants in constants TravelSegment::SEGMENT_TYPE_xxx for possible values
+	 * See constants in TravelSegment::SEGMENT_TYPE_xxx for possible values
 	 * @param string $value (optional) used when setting
 	 * @return TravelSegment or string segmentType
 	 */

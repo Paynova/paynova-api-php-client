@@ -38,8 +38,8 @@ class TravelData extends Instance {
 	 * @param TravelSegmentCollection $object (optional) used when setting
 	 * @return TravelSegmentCollection
 	 */
-	public function travelSegments($object = null) { 
-		if($object != null)Util::validateObject($object,"TravelSegmentCollection");
+	public function travelSegments(TravelSegmentCollection $object = null) { 
+		if($object != null)Util::validateObject($object,"Paynova\\request\\model\\TravelSegmentCollection");
 		return $this->setOrGet(__FUNCTION__,$object); 
 	}
 }

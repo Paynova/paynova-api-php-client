@@ -13,12 +13,7 @@ class CustomDataTest extends PHPUnit_Framework_TestCase {
 	
 	public function test_propertiesAgainstSignature(){
 		$object = new CustomData();
-		$properties = $object->getPropertiesAsArray(false);
-		foreach($properties as $key=>$value) {
-			$fooValue = $key;
-			call_user_func_array(array($object,$key),array($fooValue));
-			$this->assertEquals(call_user_func_array(array($object,$key),array()),$fooValue);
-		}
+		TestHelper::assert_modelSignature($this,$object);
 	}
 	
 	public function test_factory() {

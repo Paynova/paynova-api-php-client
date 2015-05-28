@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__."/../../TestHelper.php";
 
-use Paynova\request\model\Address;
+use Paynova\model\Address;
 use Paynova\request\model\TravelSegmentAir;
 use Paynova\request\model\TravelSegmentRail;
 use Paynova\util\Util;

@@ -3,7 +3,7 @@ require_once __DIR__."/../../../TestHelper.php";
 
 use Paynova\request\model\PaymentMethodCollection;
 use Paynova\request\model\PaymentMethod;
-use Paynova\request\model\Name;
+use Paynova\model\Name;
 
 class PaymentMethodCollectionTest extends PHPUnit_Framework_TestCase {
 
