@@ -7,6 +7,7 @@ use Paynova\PaynovaConfig;
 use Paynova\http\Http;
 use Paynova\http\HttpConfig;
 use Paynova\http\HttpEvent;
+use Paynova\http\HttpImpl;
 use Paynova\exception\PaynovaException;
 
 
