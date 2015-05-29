@@ -39,7 +39,7 @@ abstract class Request extends Instance {
 	 * 3 sets the API REST path
 	 * @param array $signature
 	 * @param array $required
-	 * @param string $restPath
+	 * @param mixed $restPath string or array of string with ie /part/{property}/part2/{property} etc
 	 * @param Http $http (optional)
 	 */
 	public function __construct($signature, $required, $restPath, Http $http = null) {
@@ -67,7 +67,7 @@ abstract class Request extends Instance {
 	
 	/**
 	 * Set the REST path for this Request
-	 * @param String $path
+	 * @param mixed $path string or array of strings
 	 * @throws PaynovaException if trying to set wit an empty path
 	 */
 	private function _setRestPath($path) {
@@ -79,7 +79,7 @@ abstract class Request extends Instance {
 	
 	/**
 	 * Get the REST path for this Request
-	 * @return string
+	 * @return mixed string of array of strings
 	 */
 	public function getRestPath() {
 		return $this->_restPath;

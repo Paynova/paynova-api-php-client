@@ -22,7 +22,8 @@ if(!function_exists("localConfig")) {
 			"username"=>"set-merchant-username-here",
 			"password"=>"set-merchant-password-here",
 			"secretkey"=>"set-merchant-secret-key-here",
-			"merchantURL"=>"set-merchant-callback/redirect-url-here"
+			"merchantURL"=>"set-merchant-callback/redirect-url-here",
+			"customerGovernmentId"=>"set-customer-government-id-here"//To be able to test GetAddresses - ask Paynova for a valid 
 		);
 		return $arr[$var];
 	}
@@ -132,6 +133,12 @@ class TestHelper {
 				break;
 			case "ORDER_NOT_FOUND":
 				return '"status": { "isSuccess": false,	"errorNumber": 3000,	"statusKey": "ORDER_NOT_FOUND","statusMessage": "The specified order was not found.",	"errors": null,	"exceptionDetails": null}';
+				break;
+			case "SUCCESS_GET_ADDRESSES":
+				return '"governmentId":"123456781234","countryCode":"SE","addresses":[{"name":{"companyName":null,"title":null,"firstName":"Namni","middleNames":null,"lastName":"ENAMNI","suffix":null},"address":{"type":"legal","street1":"GATUADRESS 77","street2":null,"street3":"","street4":"","city":"LANDSKRONA","postalCode":"26151","regionCode":null,"countryCode":"SE"}},{"name":{"companyName":null,"title":null,"firstName":"Namni","middleNames":null,"lastName":"ENAMNI","suffix":null},"address":{"type":"nonverified","street1":"GATUADRESS 77","street2":"","street3":"","street4":"","city":"LANDSKRONA","postalCode":"26151","regionCode":"","countryCode":"SE"}},{"name":{"companyName":null,"title":null,"firstName":"Namni","middleNames":null,"lastName":"ENAMNI","suffix":null},"address":{"type":"nonverified","street1":"GATUADRESS 77","street2":"","street3":"","street4":"","city":"LANDSKRONA","postalCode":"26151","regionCode":null,"countryCode":"SE"}}],"status":{"isSuccess":true,"errorNumber":0,"statusKey":"SUCCESS","statusMessage":"The operation was successful.","errors":null,"exceptionDetails":null}';
+				break;
+			case "FAIL_GET_ADDRESSES":
+				return '"governmentId":null,"countryCode":null,"addresses":[],"status":{"isSuccess":false,"errorNumber":-2,"statusKey":"VALIDATION_ERROR","statusMessage":"The request contained one or more validation errors.  See the errors collection for further details.","errors":[{"errorCode":"GovernmentIdIsInvalid","fieldName":"GovernmentId","message":"Provided value does not evaluate to a valid government id."}],"exceptionDetails":null}';
 				break;
 				
 		}
