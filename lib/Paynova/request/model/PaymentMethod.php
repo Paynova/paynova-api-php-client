@@ -5,7 +5,7 @@ use Paynova\model\Instance;
 
 /**
  * class PaymentMethod
- * part of service: 	see Paynova/request/model/PaymentMethodCollection
+ * part of service: 	see Paynova/model/PaymentMethodCollection
  *
  *
  * @package Paynova/request/model

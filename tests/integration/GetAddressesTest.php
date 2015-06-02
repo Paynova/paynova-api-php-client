@@ -41,7 +41,7 @@ class GetAddressesTest extends PHPUnit_Framework_TestCase {
 		
 		$response = $request->request();
 		
-		$this->assertTrue($response->addresses()->size()>0,"The response of does not contain any addresses");
+		$this->assertTrue($response->addresses()->size()>0,"The response of RequestGetAddresses does not contain any addresses");
 		
 	}
 	

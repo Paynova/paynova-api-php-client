@@ -163,6 +163,8 @@ abstract class Instance implements PropertyInterface{
 		foreach($signature as $key=>$value) {
 			if(is_int($key)) {
 				$this->_properties[$value]="";
+			}else if(is_array($value)) {
+				$this->_properties[$key] = array();
 			}else if(class_exists($value)) {
 				$this->_properties[$key] = new $value();
 			}
@@ -198,7 +200,13 @@ abstract class Instance implements PropertyInterface{
 				!array_key_exists($key,$signature) && (!in_array($key,$signature) || is_array($value))
 			){
 				throw new InvalidArgumentException("'$key' is not a property in '$class'");
-			} else if(is_array($value) && class_exists($signature[$key])) {
+			} else if(is_array($value) && is_array($signature[$key])) {
+			
+			} else if(
+					!(is_array($value) && is_array($signature[$key]))//If the signature is key=>array()
+					&&
+					(is_array($value) && class_exists($signature[$key]))
+			) {
 				
 				$classes = array_merge(array($signature[$key]),Util::getSubclasses($signature[$key]));
 				$o = self::factoryFromFirstBestClass($classes,$value);
