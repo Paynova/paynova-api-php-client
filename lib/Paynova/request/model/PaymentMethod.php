@@ -50,6 +50,11 @@ class PaymentMethod extends Instance {
 	const E_ACCOUNT_WALLET_RESURS_BANK_CARD = 305;
 	const E_ACCOUNT_WALLET_RESURS_BANK_INVOICE = 306;
 	
+	/**
+	 * Paynova Invoice
+	 */
+	const PAYNOVA_INVOICE = 311;
+	
 	
 	/**
 	 * @see model/Instance::__construct()

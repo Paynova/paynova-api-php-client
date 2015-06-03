@@ -43,14 +43,28 @@ abstract class Instance implements PropertyInterface{
 	 * Sets the required properties, required means that certain properties
 	 * in $signature have to be set when used in a API request/response
 	 * @param array $signature
-	 * @param array $required
+	 * @param array $required (optional) 
+	 * @param array $defaultValues has to contain keys from $signature (optional)
 	 */
-	protected function __construct($signature, $required = array()) {
+	protected function __construct($signature, $required = array(), $defaultValues = array()) {
 		$this->_signature = $signature;
 		
 		$this->_required = $required;
 		
 		$this->_declareProperties($signature);
+		
+		$this->_setDefaultValues($defaultValues);
+	}
+	
+	/**
+	 * Set default values on properties
+	 * @param array $defaultValues has to contain keys from $this->_signature
+	 */
+	private function _setDefaultValues($defaultValues){
+		if(!is_array($defaultValues) || empty($defaultValues)) return;
+		foreach($defaultValues as $key=>$value){
+			$this->__set($key, $value);
+		}
 	}
 	/**
 	 * Sets the properties that are required

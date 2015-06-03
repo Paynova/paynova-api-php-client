@@ -41,9 +41,10 @@ abstract class Request extends Instance {
 	 * @param array $required
 	 * @param mixed $restPath string or array of string with ie /part/{property}/part2/{property} etc
 	 * @param Http $http (optional)
+	 * @param array $defaultValues has to contain keys from $signature (optional)
 	 */
-	public function __construct($signature, $required, $restPath, Http $http = null) {
-		parent::__construct($signature,$required);
+	public function __construct($signature, $required, $restPath, Http $http = null, $defaultValues = array()) {
+		parent::__construct($signature,$required, $defaultValues);
 		
 		$this->_setRestPath($restPath);
 		
