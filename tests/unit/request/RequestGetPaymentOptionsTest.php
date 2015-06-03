@@ -2,6 +2,7 @@
 require_once __DIR__."/../../TestHelper.php";
 
 use Paynova\request\RequestGetPaymentOptions;
+use Paynova\request\model\PaymentChannel;
 
 class RequestGetPaymentOptionsTest extends PHPUnit_Framework_TestCase
 {
@@ -11,7 +12,8 @@ class RequestGetPaymentOptionsTest extends PHPUnit_Framework_TestCase
 	 */
 	public function test_propertiesAgainstSignature(){
 		$object = new RequestGetPaymentOptions();
-		TestHelper::assert_modelSignature($this,$object);
+		$specialArgumentFunction = create_function('$method,$param','return $method=="paymentChannelId"?'.Paynova\request\model\PaymentChannel::WEB.':$param;');
+		TestHelper::assert_modelSignature($this,$object,$specialArgumentFunction);
 	}
 	
 	/**
@@ -55,7 +57,7 @@ class RequestGetPaymentOptionsTest extends PHPUnit_Framework_TestCase
 		
 		$request = RequestGetPaymentOptions::factory(array(
 			"totalAmount"=>"100.00",
-			"paymentChannelId"=>"1",
+			"paymentChannelId"=>PaymentChannel::WEB,
 			"currencyCode"=>"SEK",
 			"countryCode"=>"SE",
 			"languageCode"=>"SWE"

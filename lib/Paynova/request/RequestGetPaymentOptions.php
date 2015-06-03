@@ -2,6 +2,7 @@
 namespace Paynova\request;
 
 use Paynova\http\HttpConfig;
+use Paynova\request\model\PaymentChannel;
 
 /**
  * service: 	GetPaymentOptions
@@ -15,13 +16,6 @@ use Paynova\http\HttpConfig;
  */
 class RequestGetPaymentOptions extends Request {
 	
-	
-	/**
-	 * constants for paymentChannelId
-	 */
-	const PAYMENT_CHANNEL_WEB = 1;
-	const PAYMENT_CHANNEL_MAIL_TELEPHONE = 2;
-	const PAYMENT_CHANNEL_RECURRING_SUBSCRIPTION = 7;
 	
 	/**
 	 * See request/Request::__construct()
@@ -64,11 +58,14 @@ class RequestGetPaymentOptions extends Request {
 	
 	/**
 	 * paymentChannelId setter/getter
-	 * The channel of payment. See constanst PAYMENT_CHANNEL_xxxx
+	 * Use PaymentChannel helper class constants
 	 * @param int $value (optional) used when setting
 	 * @return RequestGetPaymentOptions or int paymentChannelId
 	 */
-	public function paymentChannelId($value = null) { return $this->setOrGet(__FUNCTION__,$value); }
+	public function paymentChannelId($value = null) { 
+		if($value!=null)PaymentChannel::idIsValidOtherwiseThrowInvalidException($value);
+		return $this->setOrGet(__FUNCTION__,$value); 
+	}
 	
 	
 	/**

@@ -4,6 +4,7 @@ require_once __DIR__."/../TestHelper.php";
 use Paynova\request\RequestCreateOrder;
 use Paynova\request\RequestInitializePayment;
 use Paynova\request\model\InterfaceOptions;
+use Paynova\request\model\PaymentChannel;
 
 class InitializePaymentTest extends PHPUnit_Framework_TestCase {
 	
@@ -15,7 +16,7 @@ class InitializePaymentTest extends PHPUnit_Framework_TestCase {
 		$request = RequestInitializePayment::factory(array(
 				"orderId"=>"1234",
 				"totalAmount"=>100.00,
-				"paymentChannelId"=>RequestInitializePayment::PAYMENT_CHANNEL_WEB,
+				"paymentChannelId"=>PaymentChannel::WEB,
 				"interfaceOptions"=>array(
 						"interfaceId"=>InterfaceOptions::ID_AERO,
 						"customerLanguageCode"=>"swe",
@@ -49,7 +50,7 @@ class InitializePaymentTest extends PHPUnit_Framework_TestCase {
 		$request = RequestInitializePayment::factory(array(
 				"orderId"=>$response->orderId(),
 				"totalAmount"=>100.00,
-				"paymentChannelId"=>RequestInitializePayment::PAYMENT_CHANNEL_WEB,
+				"paymentChannelId"=>PaymentChannel::WEB,
 				"interfaceOptions"=>array(
 						"interfaceId"=>InterfaceOptions::ID_AERO,
 						"customerLanguageCode"=>"swe",

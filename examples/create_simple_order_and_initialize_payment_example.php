@@ -9,6 +9,7 @@ include "examples_config.php";
 use Paynova\request\RequestCreateOrder;
 use Paynova\request\RequestInitializePayment;
 use Paynova\request\model\InterfaceOptions;
+use Paynova\request\model\PaymentChannel;
 
 /*
  * Create an simple order
@@ -31,7 +32,7 @@ if($response->status()->isSuccess()==1) {
 	$initRequest = RequestInitializePayment::factory(array(
 			"orderId"=>$response->orderId(),//response from the RequestCreateOrder request
 			"totalAmount"=>"100.00",
-			"paymentChannelId"=>RequestInitializePayment::PAYMENT_CHANNEL_WEB,
+			"paymentChannelId"=>PaymentChannel::WEB,
 			"interfaceOptions"=>array(
 					"interfaceId"=>InterfaceOptions::ID_AERO,
 					"customerLanguageCode"=>"swe",

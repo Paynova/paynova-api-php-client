@@ -2,6 +2,7 @@
 require_once __DIR__."/../TestHelper.php";
 
 use Paynova\request\RequestGetPaymentOptions;
+use Paynova\request\model\PaymentChannel;
 
 class GetPaymentOptionsTest extends PHPUnit_Framework_TestCase {
 	
@@ -18,7 +19,7 @@ class GetPaymentOptionsTest extends PHPUnit_Framework_TestCase {
 		
 		$request->countryCode("SE")
 			->totalAmount(100.00)
-			->paymentChannelId(RequestGetPaymentOptions::PAYMENT_CHANNEL_WEB)
+			->paymentChannelId(PaymentChannel::WEB)
 			->currencyCode("SEK")
 			->countryCode("SE")
 			->languageCode("SWE");
