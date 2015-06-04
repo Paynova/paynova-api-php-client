@@ -20,7 +20,7 @@ class Customer extends Instance {
 	 */
 	public function __construct() {
 		parent::__construct(array(
-			"customerId","emailAddress", 
+			"customerId","emailAddress", "governmentId",
 			"name"=> "Paynova\\model\\Name",
 			"homeTelephone","workTelephone","mobileTelephone" 
 		));	
@@ -76,6 +76,14 @@ class Customer extends Instance {
 	 * @return Customer or string mobileTelephone
 	 */
 	public function mobileTelephone($value = null) { return $this->setOrGet(__FUNCTION__,$value); }
+	
+	/**
+	 * governmentId setter/getter
+	 * The customer's personal/company nr
+	 * @param string $value (optional) used when setting
+	 * @return Customer or string governmentId
+	 */
+	public function governmentId($value = null) { return $this->setOrGet(__FUNCTION__,$value); }
 	
 	
 }
