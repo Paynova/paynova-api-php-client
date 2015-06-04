@@ -18,7 +18,7 @@ class HttpConfigTest extends PHPUnit_Framework_TestCase {
 		
 		$this->assertEquals($config->get_CURLOPT(CURLOPT_RETURNTRANSFER), true);
 		
-		$this->assertEquals($config->get_CURLOPT(CURLOPT_TIMEOUT), 30);
+		$this->assertEquals($config->get_CURLOPT(CURLOPT_TIMEOUT), 60);
 		
 		$this->assertEquals($config->get_CURLOPT(CURLOPT_URL), "http://www.foo.com");
 	}
@@ -34,7 +34,7 @@ class HttpConfigTest extends PHPUnit_Framework_TestCase {
 		
 		$this->assertEquals($config->get_CURLOPT(CURLOPT_RETURNTRANSFER), true);
 		
-		$this->assertEquals($config->get_CURLOPT(CURLOPT_TIMEOUT), 30);
+		$this->assertEquals($config->get_CURLOPT(CURLOPT_TIMEOUT), 60);
 		
 		$this->assertNotEmpty($config->get_CURLOPT(CURLOPT_HTTPHEADER));
 	}

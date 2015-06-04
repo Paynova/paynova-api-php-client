@@ -29,7 +29,7 @@ class HttpConfig  {
 			CURLOPT_HEADER 			=> true,
 			CURLINFO_HEADER_OUT		=> true,
 			CURLOPT_RETURNTRANSFER	=> true,
-			CURLOPT_TIMEOUT			=> 30,
+			CURLOPT_TIMEOUT			=> 60,
 			CURLOPT_HTTPHEADER		=>	array()
 	);
 	
