@@ -19,7 +19,7 @@ OR
 ```
 {
   "require" : {
-    "paynova/paynova_php": "v2.0.2"
+    "paynova/paynova_php": "v3.0.1"
   }
 }
 ```
